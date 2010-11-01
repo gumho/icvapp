@@ -1,6 +1,4 @@
-//temp data
-
-var rowHeight = 29;
+var rowHeight = 26;
 
 $(document).ready(function() {
 	//option defaults
@@ -36,7 +34,7 @@ $(document).ready(function() {
 	
 	//result drop click handlers
 	$("#results tr:not(:first)").toggle(function() {
-		var topOffset = $(this).offset().top + rowHeight;
+		var topOffset = $(this).offset().top + rowHeight - 1;
 		
 		$("#result_drop").css({
 			'top': topOffset + 'px'
@@ -44,9 +42,16 @@ $(document).ready(function() {
 		});
 		
 		$("#result_drop").slideDown();
+		$(this).css('background-color', '#eee');
 	},
 	function() {
 		$("#result_drop").slideUp();
+		$(this).css('background-color', '#fff');
 	});
 	
+	$("#rd_close").click(function() {
+		$("#result_drop").slideUp();
+		return false;
+	});
+
 })
