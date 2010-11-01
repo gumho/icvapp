@@ -1,5 +1,6 @@
 /*-------global------*/
 body {
+	font-size: 13px;
 	font-family: "Lucinda Grande", Tahoma;
 	overflow-y: scroll;
 }
@@ -29,7 +30,7 @@ a {
 #logo {
 	font-family: Helvetica;
 	letter-spacing: -4px;
-    font-size: 50px;
+    font-size: 40px;
 }
 
 #header_tabs {
@@ -89,12 +90,26 @@ a {
 }
 /*-------table------*/
 #result_drop {
-	height: 100px;
-	width: 600px;
-	background-color: lime;
+	height: 50px;
+	width: 598px;
+	background-color: #fff;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	border-left: 1px solid #ccc;
 	display: none;
 	position: absolute;
+	-moz-border-radius-bottomright: 15px;
+	-moz-border-radius-bottomleft: 15px;
+	-webkit-border-bottom-left-radius: 15px;
+	-webkit-border-bottom-right-radius: 15px;
 }
+
+	#result_drop #rd_close {
+		bottom:0;
+		position:absolute;
+		text-align:center;
+		width:100%;
+	}
 
 .pass { color: #106D10; text-align: center; }
 
@@ -105,8 +120,13 @@ a {
 }
 
 #results tr {
+	height: 26px;
 	cursor: pointer;
 	border-bottom: 1px solid #ccc;
+}
+
+#results tr:hover {
+	background-color: #eee;
 }
 
 #results th {
