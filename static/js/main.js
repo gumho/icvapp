@@ -51,6 +51,7 @@ $(document).ready(function() {
 	
 	$("#rd_close").click(function() {
 		$("#result_drop").slideUp();
+		$(this).css('background-color', '#fff');
 		return false;
 	});
 
