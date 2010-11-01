@@ -42,16 +42,13 @@ $(document).ready(function() {
 		});
 		
 		$("#result_drop").slideDown();
-		$(this).css('background-color', '#eee');
 	},
 	function() {
 		$("#result_drop").slideUp();
-		$(this).css('background-color', '#fff');
 	});
 	
 	$("#rd_close").click(function() {
 		$("#result_drop").slideUp();
-		$(this).css('background-color', '#fff');
 		return false;
 	});
 
