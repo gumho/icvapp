@@ -1,0 +1,3 @@
+index.yaml
+*.pyc
+templates/__init__.py

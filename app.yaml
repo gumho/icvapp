@@ -1,0 +1,10 @@
+application: icv
+version: test
+api_version: 1
+runtime: python
+ 
+handlers:
+- url: /static
+  static_dir: static
+- url: .*
+  script: icvapp.py
