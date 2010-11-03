@@ -3,12 +3,12 @@ import web
 render = web.template.render('templates/', base='base')
 
 class index:
-	def GET(self):
-		return render.index();
+    def GET(self):
+        return render.index()
 
 class options:
-	def GET(self):
-		return render.options()
+    def GET(self):
+        return render.options()
 		
 class search():
 	"""gets the search variables, searches for associated records,
