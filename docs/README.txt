@@ -1,20 +1,32 @@
+Dependencies:
+1. web.py framework
+2. sqlalchemy
+3. python-mysqldb (for development)
+
+Setup:
+1. Create the database. "python models/rismodel.py"
+
 Application package hierarchy:
 
 icvapp
-	app.yaml (app description)
-	build-tools (contains build/integration tools)
-	CHANGES.txt (changelog)
-	crosscheck.py (icd-cpt crosswalk connector)
+    config (config files)
+    controllers.py (url handlers)
+    docs
+        CHANGES.txt (changelog)
+        README.txt (this)
 	icvapp.py (application main)
-	README.txt (this)
-	risconnector.py (connection to RIS)
-	static
+	interface (external connection managers)
+	    crossconnector.py
+	    risconnector.py
+	models (schema mappings)
+	    rismodel.py
+	static (static content)
 	    css
 	    images
 	    js (client-side code/AJAX)
-	templates (pages)
+	templates (html templates)
 	    base.html
 	    index.html
 	    options.html
-	tests (tests)
-	web
+	tests (unit tests)
+	web (web.py library)
