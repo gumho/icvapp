@@ -1,6 +1,5 @@
 import web
 
-from processors import load_sqla
 from controllers import *
 
 urls = (
