@@ -12,5 +12,4 @@ urls = (
 
 if __name__ == "__main__":
     app = web.application(urls, globals())
-    app.add_processor(load_sqla)
     app.run()
