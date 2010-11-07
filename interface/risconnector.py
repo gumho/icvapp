@@ -9,10 +9,10 @@ class RISConnector:
         
         session = scoped_session(sessionmaker(bind=engine))
         
-        if start_date == end_date:
-            start_date += ' 00:00:00'
-            end_date += ' 24:59:59'
-            
-        records = session.query(Study).filter(and_(Study.date > start_date, Study.date < end_date)).all()
+        # Append boundary time limits as sql column type is in Datetime format
+        start_date += ' 00:00:00'
+        end_date += ' 23:59:59'
+
+        records = session.query(Study).filter(and_(Study.date >= start_date, Study.date <= end_date)).all()
 
         return records
