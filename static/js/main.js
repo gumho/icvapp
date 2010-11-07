@@ -1,5 +1,6 @@
 var rowHeight = 26;
 
+//takes '11/8/2010' and turns into '2010-11-08'
 function sqlDate(date) {
     return date.substr(6,10) + '-' + date.substr(0,2) + '-' + date.substr(3,2);
 }
