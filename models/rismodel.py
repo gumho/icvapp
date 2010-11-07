@@ -11,7 +11,7 @@ class Study(Base):
     
     _id = Column('id', String(16), primary_key=True)
     accession = Column('accession', String(12))
-    referring = Column('referring', Integer)
+    referring = Column('referring', String(64))
     visit = Column('visit', Integer)
     cpt = Column('cpt', String(8))
     icd = Column('icd', String(8))
