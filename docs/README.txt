@@ -3,8 +3,9 @@ Dependencies:
 2. sqlalchemy
 3. python-mysqldb (for development)
 
-Setup:
-1. Create the database. "python models/rismodel.py"
+Development pre-reqs:
+1. Create the mock RIS database. "python models/rismodel.py"
+2. Create the mock Crosscheck database. "python models/crossmodel.py"
 
 Application package hierarchy:
 
@@ -29,4 +30,4 @@ icvapp
 	    index.html
 	    options.html
 	tests (unit tests)
-	web (web.py library)
+	web (web.py library, not our code)
