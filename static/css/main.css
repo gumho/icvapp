@@ -3,6 +3,7 @@ body {
 	font-size: 13px;
 	font-family: "Lucinda Grande", Tahoma;
 	overflow-y: scroll;
+	color: #555;
 }
 
 ul, li, form, img {
@@ -22,9 +23,8 @@ a {
     margin: 0 auto;
 }
 
-.clear {
-	clear: both;
-}
+.clear { clear: both; }
+.inline { display: inline ;}
 
 /*-------header-----*/
 #logo {
@@ -34,7 +34,7 @@ a {
 }
 
 #header_tabs {
-	margin-top: 20px;
+	margin-top: 10px;
 }
 #header_tabs li {
     display: inline;
@@ -44,6 +44,7 @@ a {
 
 /*-------criteria---*/
 #criteria {
+    font-family: Arial;
 	width: 560px;
 	display: inline-block;
 	background-color: #eee;
@@ -52,22 +53,20 @@ a {
 	clear: left;	
 }
 
-.criteria_indent {
-	padding-left: 20px;
-}
-
-#date_left, #date_right {
-	float: left;
-	font-size: 13px;
-	margin-right: 10px;
-}
-	
- 	#date_left input, #date_right input {
-		width: 74px;
-	}
-	
 #criteria p {
 	margin: 0;
+}
+
+#criteria #dates input{
+    width: 75px;
+}
+
+#criteria .criteria_small_top {
+    margin-top: 5px;
+}
+
+#criteria .criteria_med_top {
+    margin-top: 10px;
 }
 
 #criteria .criteria_status_input {
