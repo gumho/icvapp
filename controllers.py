@@ -1,4 +1,7 @@
 import web
+from core.risrecord import RISRecord
+from utils.logging import Logger
+
 from interface.risconnector import RISConnector
 
 render = web.template.render('templates/', base='base')
@@ -26,8 +29,20 @@ class search:
         # get records
         records = RISConnector().get_records(start, end)
         
-        # process records
+        # convert sql records into risrecord objects
+        logger = Logger()
         
+        d = {}
+        for r in records:
+            acc = r.accession
+            if not d.has_key(acc):
+                d[acc] = RISRecord(acc, r.referring, r.visit, r.date)
+                
+            d[acc].add_pair(r.icd, r.cpt)
+        
+        
+            
+        logger.close()
         # assemble return format
 
         # FIXME: change return
