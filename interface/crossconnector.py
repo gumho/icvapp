@@ -3,8 +3,8 @@ from vendor import CrossChecker
 class CrossConnector:
 	"""this module checks the icd-cpt database for validating codes"""
 
-	def checkRecords(self, icd, cpt):
+	def checkPairs(self, code_pair_list):
 		"""takes a list of records and batch checks them. returns list 
 		with results.
 		"""
-		return CrossChecker.check_pair(icd, cpt)
+        pass
