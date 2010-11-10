@@ -104,10 +104,10 @@ a {
 }
 
 	#result_drop #rd_close {
-		bottom:0;
-		position:absolute;
+	    display: block;
+        width: 100px;
+        margin: 0 auto;
 		text-align:center;
-		width:100%;
 	}
 
 .pass { color: #106D10; text-align: center; }
