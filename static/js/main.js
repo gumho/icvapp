@@ -34,7 +34,7 @@ $(document).ready(function() {
             },
 			success: function(data) {
 				//append results to table
-				alert(data);
+				$("#results").append(data);
 			}
 		});
 		
@@ -42,7 +42,7 @@ $(document).ready(function() {
 	});
 	
 	//result drop click handlers
-	$("#results tr:not(:first)").toggle(function() {
+	$("#results tr:not(:first)").live('click', function() {
 		var topOffset = $(this).offset().top + rowHeight - 1;
 		
 		$("#result_drop").css({
@@ -51,10 +51,8 @@ $(document).ready(function() {
 		});
 		
 		$("#result_drop").slideDown();
-	},
-	function() {
-		$("#result_drop").slideUp();
-	});
+	}
+    );
 	
 	$("#rd_close").click(function() {
 		$("#result_drop").slideUp();
