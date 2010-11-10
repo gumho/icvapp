@@ -33,5 +33,6 @@ class Study(Base):
 		
 metadata = Base.metadata
 
+# script to create the tables if necessary
 if __name__ == "__main__":
     metadata.create_all(engine)
