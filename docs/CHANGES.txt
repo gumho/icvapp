@@ -1,6 +1,19 @@
-Change Log
+============================
+Changelog
+============================
 
-10/28/10
+10/29/10 - 11/9/10 
+-added sqlalchemy models
+-implemented crosschecking stub
+-implemented RIS modules (checking, db)
+-bridged web application and backend components
+-added core risrecord and codepair classes
+-completed ris record creation tool
+-UI stability fixes
+-created application logging module
+-missing comments/docs added
+
+10/22/10 - 10/28/10
 -implemented javascript search handling
 -created skeletons for RIS connection and crosscheck
 -developed scaffolding script for setting up and scaffolding RIS db schema
