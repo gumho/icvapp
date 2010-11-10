@@ -55,4 +55,6 @@ class search:
         # TODO: sort / filter results 
         
         # FIXME: change return
+        # ALSO: NEED JSON RETURN? RESULTS? PAGINATION? 
+        # for pagination --> create a for-loop iterator
         return records
