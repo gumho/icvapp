@@ -1,6 +1,6 @@
 import web
 from core.risrecord import RISRecord
-from utils.logging import Logger
+from utils.logger import Logger
 
 from interface.risconnector import RISConnector
 
@@ -18,7 +18,7 @@ class search:
     """gets the search variables, searches for associated records,
     processes the records through the icd-cpt engine and returns results
     """
-    def POST(self):
+    def POST(self):        
         # process search vars
         i = web.input()
         
@@ -26,24 +26,33 @@ class search:
         end = i.criteria_end
         status = i.criteria_status
         
-        # get records
+        # get records in model.Study object format
         records = RISConnector().get_records(start, end)
         
         # convert sql records into risrecord objects
-        logger = Logger()
-        
-        d = {}
+        risrecs = {}
         for r in records:
             acc = r.accession
-            if not d.has_key(acc):
-                d[acc] = RISRecord(acc, r.referring, r.visit, r.date)
-                
-            d[acc].add_pair(r.icd, r.cpt)
-        
-        
             
-        logger.close()
-        # assemble return format
+            if not risrecs.has_key(acc):
+                risrecs[acc] = RISRecord(
+                    r.accession,
+                    r.referring,
+                    r.visit,
+                    r.date
+                )
+            
+            risrecs[acc].add_pair(r.icd, r.cpt)
 
+        # validate records
+        records = ''
+        for (acckey, rec) in risrecs.items():
+            rec.validatePairs()
+            records += rec.html()
+        
+        # TODO: assemble return format
+
+        # TODO: sort / filter results 
+        
         # FIXME: change return
         return records
