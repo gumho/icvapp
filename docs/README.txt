@@ -1,16 +1,25 @@
-Dependencies:
+============================
+Dependencies
+============================
 1. web.py framework
 2. sqlalchemy
 3. python-mysqldb (for development)
 
-Development pre-reqs:
+============================
+Development Pre-Reqs
+============================
 1. Create the mock RIS database. "python models/rismodel.py"
-2. Create the mock Crosscheck database. "python models/crossmodel.py"
 
-Application package hierarchy:
-
+============================
+Application Package Hierarchy
+============================
 icvapp
+    buildtools (creation tools)
+        ris_create_records.py
     config (config files)
+    core 
+        risrecord.py (risrecord/codepair objects)
+        config_handler.py (reads/loads configuration info)
     controllers.py (url handlers)
     docs
         CHANGES.txt (changelog)
@@ -29,5 +38,6 @@ icvapp
 	    base.html
 	    index.html
 	    options.html
-	tests (unit tests)
+    utils (application utilities)
+        logger.py
 	web (web.py library, not our code)
