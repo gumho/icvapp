@@ -1,6 +1,8 @@
 import web
+
 from core.risrecord import RISRecord
 from utils.logger import Logger
+import rprocessor
 
 from interface.risconnector import RISConnector
 
@@ -43,18 +45,38 @@ class search:
                 )
             
             risrecs[acc].add_pair(r.icd, r.cpt)
-
-        # validate records
-        records = ''
-        for (acckey, rec) in risrecs.items():
-            rec.validatePairs()
-            records += rec.html()
         
-        # TODO: assemble return format
-
-        # TODO: sort / filter results 
+        #re-assign records to just risrecord objects
+        records = risrecs.values()
+        
+        # validate records
+        for r in records:
+            r.validatePairs()
+        
+        LOG = Logger()
+        for i in records:
+            LOG.log(i.accession)
+            
+        LOG.log('------')
+        
+        # filter / paginate / sort items
+        records = rprocessor.filter(records, status)
+        records = rprocessor.sort(records, None) # FIXME: not None
+        records = rprocessor.paginate(records, None)
+        
+        for i in records:
+            LOG.log(i.accession)
+        
+        LOG.close()
+        # jsonize
+        json = ''
+        for rec in records:
+            json += rec.json() # TODO: this step for testing only
+            
+        
+        
         
         # FIXME: change return
         # ALSO: NEED JSON RETURN? RESULTS? PAGINATION? 
         # for pagination --> create a for-loop iterator
-        return records
+        return json
