@@ -101,6 +101,23 @@ a {
 	-webkit-border-bottom-left-radius: 15px;
 	-webkit-border-bottom-right-radius: 15px;
 }
+    #result_drop p {
+        margin: 10px;
+    }
+        .p-pair, .f-pair {
+            font-family: Courier;
+            display: inline-block;
+            color: #000; 
+            padding: 2px; 
+            margin: 2px 0 0 0;
+        }
+        #result_drop .p-pair {
+            background-color: tan;
+        }
+        
+        #result_drop .f-pair {
+            background-color: coral;
+        }
 
 	#result_drop #rd_close {
 	    display: block;
