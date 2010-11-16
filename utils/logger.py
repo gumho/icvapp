@@ -12,4 +12,3 @@ class Logger():
     
     def close(self):
         self.output.close()
-        
