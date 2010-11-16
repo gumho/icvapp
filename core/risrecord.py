@@ -1,4 +1,5 @@
 from interface.crossconnector import CrossConnector
+from utils.logger import Logger
 
 class RISRecord():
     """RISRecord is a representation of one 'study' in the RIS system. This constitutes
@@ -22,10 +23,32 @@ class RISRecord():
     
     def validatePairs(self):
         """validate all code pairs within"""
-        self.codepairs = [pair.validate() for pair in self.codepairs]
+        for p in self.codepairs:
+            p.validate()
+        
+    def json(self):
+        """return record as JSON object"""
+        json = ''
+        json += '{'
+        json += '"accession" : "%s",' % self.accession
+        json += '"date" : "%s",' % self.getDate()
+        json += '"time" : "%s",' % self.getTime() # TODO
+        json += '"status" : "%s",' % self.getStatus()
+        json += '"codepairs" : ['
+        
+        for i in range(len(self.codepairs)):
+            json += self.codepairs[i].json()
+            if i == len(self.codepairs) - 1:
+                json += ''
+            else:
+                json += ','
+        
+        json += ']}'
+        
+        return json
         
     def html(self):
-        """convert record into HTML table row"""
+        """return record as HTML table row"""
         html = "\
         <tr>\
             <td>%s</td>\
@@ -33,15 +56,33 @@ class RISRecord():
             <td>%s</td>\
             <td>%s</td>\
         </tr>\
-        " % ('date', 'time', 'acc', 'status')
+        " % (self.date, 'time', self.accession, self.getStatus())
         
+        for p in self.codepairs:
+            html += "\
+            %s : %s - %s<br>\
+            " % (p.icd, p.cpt, p.status)
         return html
+        
+    def getTime(self):
+        return 'todo'
+    
+    def getDate(self):
+        return 'todo'
+
+    def getStatus(self):
+        for pair in self.codepairs:
+            if pair.status is 'failed':
+                return 'failed'
+        
+        return 'passed'
 
 class CodePair():
     """a representation of an icd9 and cpt code pair."""
     def __init__(self, icd, cpt):
         self.icd = icd
         self.cpt = cpt
+        self.status = 'unchecked'
     
     def get_pair(self):
         """returns the code pair as a tuple"""
@@ -51,7 +92,15 @@ class CodePair():
         checker = CrossConnector()
         
         if checker.validate(self.icd, self.cpt):
-            self.passed = True
+            self.status = 'passed'
         else:
-            self.passed = False
-            
+            self.status = 'failed'
+    
+    def json(self):
+        json = ''
+        json += '{'
+        json += '"icd": "%s",' % self.icd
+        json += '"cpt": "%s",' % self.cpt
+        json += '"status": "%s"' % self.status
+        json += '}'
+        return json
