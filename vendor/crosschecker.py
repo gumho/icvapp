@@ -12,7 +12,7 @@ class CrossChecker():
         not. We are only interested in a boolean result. Here, we have hard-coded the checking 
         behaviour to report one incorrect code pair for every three pairs"""
         
-        if random.randrange(1,11) % 10 is 0:
+        if random.randrange(1,11) % 10 == 0:
             return False
         else:
             return True
