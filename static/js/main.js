@@ -33,8 +33,10 @@ $(document).ready(function() {
                 //TODO: validation
             },
 			success: function(data) {
+			    //clear table
+			    
 				//append results to table
-				$("#results").append(data);
+				//$("#results").append(data);
 			}
 		});
 		
@@ -42,7 +44,7 @@ $(document).ready(function() {
 	});
 	
 	//result drop click handlers
-	$("#results tr:not(:first)").live('click', function() {
+	$("#results tr").live('click', function() {
 		var topOffset = $(this).offset().top + rowHeight - 1;
 		
 		$("#result_drop").css({
