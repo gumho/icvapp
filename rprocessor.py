@@ -7,11 +7,12 @@ paginating a list of risrecords.
 
 PER_PAGE = 2
 
-def filter(records, status):
+def filter(records, statuses):
     """takes a list of risrecords and removes statuses 
     that don't match the provided status"""
-    if status in ('passed', 'failed'):
-        records = [r for r in records if r.getStatus() == status]
+    if len(statuses) == 1:
+        records = [r for r in records if r.getStatus() == statuses[0]]
+        
     return records
     
     
