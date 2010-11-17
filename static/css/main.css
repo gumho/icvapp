@@ -81,6 +81,9 @@ a {
 #results {
     font-size: 10px;
 }
+#result_header {
+    cursor: default;
+}
 #result_header h3{
     background: #fff !important; 
 }
@@ -91,15 +94,15 @@ a {
 .status, .status-fail, .status-pass { width: 130px; text-align: right;}
     .status-fail { color: coral;}
     .status-pass { color: green;}
-#results ul li h3 { 
+ul#results li h3 { 
     cursor:pointer;
     background: transparent url(/static/images/listgrad.png) repeat;
     font-weight: normal;
     margin: 0;
 }
-#results ul li.record h3:hover { 
+ul#results li.record h3:hover { 
     background: transparent url(/static/images/listgradinverse.png) repeat;
 }
-#results ul li.record p {
+ul#results li.record p {
     display: none;
 }
