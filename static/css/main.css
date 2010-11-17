@@ -1,7 +1,7 @@
-/*-------global------*/
+/*-------global/absolutes------*/
 body {
 	font-size: 13px;
-	font-family: "Lucinda Grande", Tahoma;
+	font-family: Tahoma;
 	overflow-y: scroll;
 	color: #555;
 }
@@ -15,160 +15,91 @@ ul, li, form, img {
 
 a {
 	color: #4297D7;
-	text-decoration: none;
 }
+
+.clear { clear: both; }
+.inline { display: inline ;}
 
 #wrapper {
 	width: 600px;
     margin: 0 auto;
 }
 
-.clear { clear: both; }
-.inline { display: inline ;}
-
-/*-------header-----*/
 #logo {
-	font-family: Helvetica;
-	letter-spacing: -4px;
-    font-size: 40px;
-}
-
-#header_tabs {
-	margin-top: 10px;
-}
-#header_tabs li {
-    display: inline;
-	padding: 5px 5px 0;
-    margin-right: 20px;
-}
-
-/*-------criteria---*/
-#criteria {
-    font-family: Arial;
-	width: 560px;
-	display: inline-block;
-	background-color: #eee;
-	border-bottom: 1px solid #ccc;
-    padding: 20px;
-	clear: left;	
-}
-
-#criteria p {
-	margin: 0;
-}
-
-#criteria #dates input{
-    width: 75px;
-}
-
-#criteria .criteria_small_top {
-    margin-top: 5px;
-}
-
-#criteria .criteria_med_top {
-    margin-top: 10px;
-}
-
-#criteria .criteria_status_input {
-	margin-left: 0;
-}
-
-#criteria .criteria_status_label {
-	margin: 0 10px 0 2px;
-	font-size: 13px;
-}
-
-#search_button {
-	margin: 0;
-	padding: 0;
-}
-
-#loading {
-	vertical-align: middle;
-	display: none;
-}
-/*-------table------*/
-#result_drop {
-	width: 598px;
-	background-color: #fff;
-	border-right: 1px solid #ccc;
-	border-bottom: 1px solid #ccc;
-	border-left: 1px solid #ccc;
-	display: none;
-	position: absolute;
-	-moz-border-radius-bottomright: 15px;
-	-moz-border-radius-bottomleft: 15px;
-	-webkit-border-bottom-left-radius: 15px;
-	-webkit-border-bottom-right-radius: 15px;
-}
-    #result_drop p {
-        margin: 10px;
-    }
-        .p-pair, .f-pair {
-            font-family: Courier;
-            display: inline-block;
-            color: #000; 
-            padding: 2px; 
-            margin: 2px 0 0 0;
-        }
-        #result_drop .p-pair {
-            background-color: tan;
-        }
-        
-        #result_drop .f-pair {
-            background-color: coral;
-        }
-
-	#result_drop #rd_close {
-	    display: block;
-        width: 100px;
-        margin: 0 auto;
-		text-align:center;
-	}
-
-.pass { color: #106D10; text-align: center; }
-
-.fail { color: #FF7F50; text-align: center;}
-
-#results {
-    border-collapse: collapse;
-}
-
-#results tr {
-	height: 26px;
-	cursor: pointer;
-	border-bottom: 1px solid #ccc;
-}
-
-#results tr:hover {
-	background-color: #eee;
-}
-
-#results th {
-}
-
-#results td, #results th {
-	text-align: left;
-    padding: 4px;
-}
-
-#results td {
-    
-}
-
-#date_col { width: 150px; }
-#time_col { width: 150px; }
-#acc_col { width: 250px; }
-#status_col { width: 50px; }
-
-/*-------pagination------*/    
-#pagination {
-    margin-top: 10px;
-}   
- 
-#pagination li {
-    float: left;
-    margin-right: 10px;
+    z-index: -100;
+    background: #ccc;
     padding: 5px;
-    border: 1px solid #eee;
+    border-right: 1px solid #eee;
+    position: absolute;
+    left: 0;
+}
+    #logo h1 {
+        margin: 0;
+        padding: 0;
+    }
+
+/*-------search---*/
+#search {
+    background-color: #f3f3f3;
+    font-family: Arial;
+	width: 580px;
+	display: inline-block;
+    padding: 10px;
+	clear: left;
+	border-bottom: 1px solid #ccc;	
+}   
+    #search p {
+        margin: 10px 0 0 0;
+    }
+    
+    p#from, p#to {
+        float: left;
+        padding: 0;
+        margin: 0;
+    }
+
+        #begin_date, #end_date {
+            width: 100px;
+        }
+    
+            .ui-datepicker-trigger {
+                position: relative;
+                vertical-align: middle;
+                left: -20px;
+            }
+    #options {
+        display: none;
+    }
+        label {
+            margin-right: 10px;
+        }
+        #options_passed, #options_failed {
+            margin-left: 0;
+        }
+
+/*-----results------*/
+#results {
+    font-size: 10px;
+}
+#result_header h3{
+    background: #fff !important; 
+}
+.date, .time, .accession, .status, .status-fail, .status-pass { display: inline-block; padding: 5px;}
+.date { width: 130px;}
+.time { width: 130px;}
+.accession { width: 130px; text-align: center;}
+.status, .status-fail, .status-pass { width: 130px; text-align: right;}
+    .status-fail { color: coral;}
+    .status-pass { color: green;}
+#results ul li h3 { 
+    cursor:pointer;
+    background: transparent url(/static/images/listgrad.png) repeat;
+    font-weight: normal;
+    margin: 0;
+}
+#results ul li.record h3:hover { 
+    background: transparent url(/static/images/listgradinverse.png) repeat;
+}
+#results ul li.record p {
+    display: none;
 }

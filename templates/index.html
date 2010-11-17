@@ -1,128 +1,102 @@
 $var js: /static/js/main.js
 
-<div id="criteria">
-    <p><strong>Search all patient visits...</strong></p>
-    
+<div id="search">    
 	<form action="#" method="get" accept-charset="utf-8">
-	    <p id="dates" class="criteria_small_top">
-	        From 
-	        <input type="text" name="criteria_start" id="criteria_start"/>
-	        to
-	        <input type="text" name="criteria_end" id="criteria_end"/>
-	    </p>		
-		
-		<p class="criteria_med_top"><strong>Show only results that have...</strong></p>
-		
-		<p class="criteria_small_top">
-		    <input type="radio" name="criteria_status" value="passed" class="criteria_status_input" id="criteria_passed">
-		    <label for="criteria_passed" class="criteria_status_label">Passed</label>
-			
-		    <input type="radio" name="criteria_status" value="failed" class="criteria_status_input" id="criteria_failed">
-		    <label for="criteria_failed" class="criteria_status_label">Failed</label>
-			
-		    <input type="radio" name="criteria_status" value="all" class="criteria_status_input" checked="on" id="criteria_all">
-		    <label for="criteria_all" class="criteria_status_label">Both</label>
-		</p>
-
-		<p class="criteria_med_top"><input type="button" value="Search" id="search_button"><img src="/static/images/loadball.gif" id="loading"></p>
+	        <p id="from">
+	            From<br>
+	            <input type="text" name="begin_date" id="begin_date"/>
+	        </p>
+            <p id="to">
+                To<br>
+    	        <input type="text" name="end_date" id="end_date"/>
+            </p>
+            <div class="clear"></div>
+            <p>
+	            <input type="button" value="Search" id="search_btn">
+	            <a href="#" id="more_options_btn">More options</a>
+	        </p>
+	        <p id="options">
+	            <strong>Show only:</strong>
+	            <br>
+                <input type="checkbox" id="options_passed" name="status" value="passed" checked="yes">
+                <label for="options_passed">Passed</label>
+                <input type="checkbox" id="options_failed" name="status" value="failed" checked="yes">
+                <label for="options_failed">Failed</label>
+	        </p>
 	</form>
 </div>
 
 <div id="num_results">
-	<p>&nbsp;</p>
+    <p>14 results</p>
 </div>
 
-<div id="result_drop">
-    <p>
-        <strong>Passed</strong><br>
-        <span class="p-pair">133.4 : 12424</span><br>
-        <span class="p-pair">242.4 : 32322</span><br><br>
-        <strong>Failed</strong><br>
-        <span class="f-pair">442.4 : 12324</p><br>        
-    </p>
-    <a href="#" id="rd_close">close</a>
+<div id="results">
+    <ul>
+        <li id="result_header">
+            <h3><span class="date"><strong>Date</strong></span><span class="time"><strong>Time</strong></span><span class="accession"><strong>Accession #</strong></span><span class="status"><strong>Status</strong></span></h3>
+        </li>
+        
+        <li class="record">
+            <h3><span class="date">Oct 1</span><span class="time">4:33AM</span><span class="accession">UEO-12422</span><span class="status-pass">passed</span></h3>
+            <p>
+                <strong>Correct (ICD:CPT)<br></strong>
+                123.23 : 41242
+                <br><br>
+                <strong>False (ICD:CPT)</strong><br>
+            </p>
+        </li>
+        
+        <li class="record">
+            <h3><span class="date">Oct 1</span><span class="time">4:33AM</span><span class="accession">UEO-12422</span><span class="status-pass">passed</span></h3>
+            <p>
+                <strong>Correct (ICD:CPT)<br></strong>
+                123.23 : 41242
+                <br><br>
+                <strong>False (ICD:CPT)</strong><br>
+            </p>
+        </li>    <li class="record">
+                <h3><span class="date">Oct 1</span><span class="time">4:33AM</span><span class="accession">UEO-12422</span><span class="status-pass">passed</span></h3>
+                <p>
+                    <strong>Correct (ICD:CPT)<br></strong>
+                    123.23 : 41242
+                    <br><br>
+                    <strong>False (ICD:CPT)</strong><br>
+                </p>
+            </li>    <li class="record">
+                    <h3><span class="date">Oct 1</span><span class="time">4:33AM</span><span class="accession">UEO-12422</span><span class="status-pass">passed</span></h3>
+                    <p>
+                        <strong>Correct (ICD:CPT)<br></strong>
+                        123.23 : 41242
+                        <br><br>
+                        <strong>False (ICD:CPT)</strong><br>
+                    </p>
+                </li>    <li class="record">
+                        <h3><span class="date">Oct 1</span><span class="time">4:33AM</span><span class="accession">UEO-12422</span><span class="status-pass">passed</span></h3>
+                        <p>
+                            <strong>Correct (ICD:CPT)<br></strong>
+                            123.23 : 41242
+                            <br><br>
+                            <strong>False (ICD:CPT)</strong><br>
+                        </p>
+                    </li>    <li class="record">
+                            <h3><span class="date">Oct 1</span><span class="time">4:33AM</span><span class="accession">UEO-12422</span><span class="status-pass">passed</span></h3>
+                            <p>
+                                <strong>Correct (ICD:CPT)<br></strong>
+                                123.23 : 41242
+                                <br><br>
+                                <strong>False (ICD:CPT)</strong><br>
+                            </p>
+                        </li>    <li class="record">
+                                <h3><span class="date">Oct 1</span><span class="time">4:33AM</span><span class="accession">UEO-12422</span><span class="status-pass">passed</span></h3>
+                                <p>
+                                    <strong>Correct (ICD:CPT)<br></strong>
+                                    123.23 : 41242
+                                    <br><br>
+                                    <strong>False (ICD:CPT)</strong><br>
+                                </p>
+                            </li>
+    </ul>
 </div>
 
-<table border="0" cellspacing="0" cellpadding="0" id="results">
-	<tr>
-		<th id="date_col">Date</th>
-		<th id="time_col">Time</th>
-		<th id="acc_col">Accession</th>
-		<th id="status_col">Status</th>
-	</tr>
-    <tr>
-        <td>Oct 11</td>
-        <td>10:34 PM</td>
-        <td>340290-UE</td>
-        <td><span class="fail">failed</span></td>
-        <span style="display: none">
-            aoeu
-        </span>
-    </tr>
-    <tr>
-        <td>Oct 11</td>
-        <td>10:34 PM</td>
-        <td>340290-UE</td>
-        <td><span class="pass">passed</span></td>
-        <span style="display: none">
-            aoeu
-        </span>
-    </tr>
-    <tr>
-        <td>Oct 11</td>
-        <td>10:34 PM</td>
-        <td>340290-UE</td>
-        <td><span class="pass">passed</span></td>
-        <span style="display: none">
-            aoeu
-        </span>
-    </tr>
-    <tr>
-        <td>Oct 11</td>
-        <td>10:34 PM</td>
-        <td>340290-UE</td>
-        <td><span class="pass">passed</span></td>
-        <span style="display: none">
-            aoeu
-        </span>
-    </tr>
-    <tr>
-        <td>Oct 11</td>
-        <td>10:34 PM</td>
-        <td>340290-UE</td>
-        <td><span class="pass">passed</span></td>
-        <span style="display: none">
-            aoeu
-        </span>
-    </tr>
-    <tr>
-        <td>Oct 11</td>
-        <td>10:34 PM</td>
-        <td>340290-UE</td>
-        <td><span class="pass">passed</span></td>
-        <span style="display: none">
-            aoeu
-        </span>
-    </tr>
-    <tr>
-        <td>Oct 11</td>
-        <td>10:34 PM</td>
-        <td>340290-UE</td>
-        <td><span class="pass">passed</span></td>
-        <span style="display: none">
-            aoeu
-        </span>
-    </tr>
-    <tr>
-        <td>Oct 11</td>
-        <td>10:34 PM</td>
-        <td>340290-UE</td>
-        <td><span class="pass">passed</span></td>
-        <span style="display: none">
-            aoeu
-        </span>
-    </tr>
-</table>
-
-<ul id="pagination">
-</ul>
+<div id="pagination">
+</div>
