@@ -4,7 +4,6 @@ from controllers import *
 
 urls = (
 	'/', 'index',
-	'/options', 'options',
 	'/search', 'search',
 	'/faq', 'faq'
 )
