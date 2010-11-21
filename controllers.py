@@ -1,20 +1,15 @@
 import web
-
-from core.risrecord import RISRecord
-from utils.logger import Logger
 import rprocessor
 
+from core.risrecord import RISRecord
 from interface.risconnector import RISConnector
+from utils.logger import Logger
 
 render = web.template.render('templates/', base='base')
 
 class index:
     def GET(self):
         return render.index()
-
-class options:
-    def GET(self):        
-        return render.options()
 		
 class search:
     """gets the search variables, searches for associated records,
@@ -22,11 +17,11 @@ class search:
     """
     def POST(self):        
         # process search vars
-        i = web.input()
+        i = web.input(status=[])
         
-        start = i.criteria_start
-        end = i.criteria_end
-        status = i.criteria_status
+        start = i.begin_date
+        end = i.end_date
+        statuses = i.status # array
         
         # get records in model.Study object format
         records = RISConnector().get_records(start, end)
@@ -48,35 +43,28 @@ class search:
         
         #re-assign records to just risrecord objects
         records = risrecs.values()
-        
+
         # validate records
         for r in records:
             r.validatePairs()
         
-        LOG = Logger()
-        for i in records:
-            LOG.log(i.accession)
-            
-        LOG.log('------')
-        
         # filter / paginate / sort items
-        records = rprocessor.filter(records, status)
-        records = rprocessor.sort(records, None) # FIXME: not None
-        records = rprocessor.paginate(records, None)
+        records = rprocessor.filter(records, statuses)
+        records = rprocessor.sort(records) # FIXME: add sort param later
+        records = rprocessor.paginate(records) # FIXME: add page number param
         
-        for i in records:
-            LOG.log(i.accession)
-        
-        LOG.close()
         # jsonize
+        # TODO: optimize so we're not using append operator
         json = ''
+        json += '{'
+        json += '"numresults":"%d",' % len(records)
+        json += '"records": ['
         for rec in records:
-            json += rec.json() # TODO: this step for testing only
-            
+            json += rec.json()
+            json += ',' # FIXME: trailing comma not valid JSON (IE hates this)
+        json += ']'
+        json += '}'
         
+        #Logger().log(json)
         
-        
-        # FIXME: change return
-        # ALSO: NEED JSON RETURN? RESULTS? PAGINATION? 
-        # for pagination --> create a for-loop iterator
         return json
