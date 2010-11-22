@@ -66,9 +66,10 @@ class search:
         json += '"totalpages": %d,' % total_pages
         json += '"numresults":"%d",' % len(records)
         json += '"records": ['
-        for rec in records:
-            json += rec.json()
-            json += ',' # FIXME: trailing comma not valid JSON (IE hates this)
+        for i in range(len(records)):
+            json += records[i].json()
+            if(i + 1 < len(records)):
+                json += ','
         json += ']'
         json += '}'
                 
