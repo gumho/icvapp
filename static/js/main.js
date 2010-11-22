@@ -26,7 +26,11 @@ function updatePagination(data) {
     
     var pages = data.totalpages;
     for(var i=1;i<=pages;i++) {
-        html += "<a href='#' class='page_select'>" + i + "</a>";
+        if(i == page) {
+            html += "<a href='#' class='current_page'>" + i + "</a>";
+        } else {
+            html += "<a href='#' class='page_select'>" + i + "</a>";            
+        }
     }
     
     $('#pagination').html(html);
@@ -42,11 +46,11 @@ function createRowContent(pairs) {
         var p = pairs[i];
         
         if(p.status == 'passed') {
-            correct.push("<span>" + p.icd + ":" + p.cpt + "</span>")
+            correct.push("<span>" + p.icd + " : " + p.cpt + "</span>")
         }
         
         if(p.status == 'failed') {
-            notcorrect.push("<span>" + p.icd + ":" + p.cpt + "</span>")
+            notcorrect.push("<span>" + p.icd + " : " + p.cpt + "</span>")
         }        
 	}
 	
@@ -57,7 +61,7 @@ function createRowContent(pairs) {
 	
 	html += "<br><strong>Not Correct (ICD:CPT)</strong><br>";
 	for(var n in notcorrect) {
-	    html += notcorrect[i] + '<br>';
+	    html += notcorrect[n] + '<br>';
 	}
 	
 	html += "</p>";
@@ -129,6 +133,12 @@ function doSubmit(options) {
             
         },
 		success: function(data) {
+		    //clear table
+		    $(".record").remove();
+		    
+		    //append results to table
+            resultsToTable(data);
+            
 		    //update page
 		    page = data.page;
 		    
@@ -136,13 +146,7 @@ function doSubmit(options) {
 			updateNumberResults(data);
 			
             //update pagination
-            updatePagination(data);
-            
-		    //clear table
-		    $(".record").remove();
-		    
-		    //append results to table
-            resultsToTable(data);
+            updatePagination(data);	    
 		}
 	});
 }
