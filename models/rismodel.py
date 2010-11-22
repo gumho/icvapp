@@ -9,7 +9,7 @@ Base = declarative_base()
 class Study(Base):
     __tablename__ = 'studies'
     
-    _id = Column('id', String(16), primary_key=True)
+    _id = Column('id', Integer(16), primary_key=True)
     accession = Column('accession', String(12))
     referring = Column('referring', String(64))
     visit = Column('visit', Integer)

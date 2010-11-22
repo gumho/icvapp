@@ -23,6 +23,10 @@ class search:
         end = i.end_date
         statuses = i.status # array
         
+        sortby = i.sortby if hasattr(i, 'sortby') else 'status'
+        sortdir = i.sortdir if hasattr(i, 'sortdir') else 'asc'
+        page = int(i.page) if hasattr(i, 'page') else 1            
+                
         # get records in model.Study object format
         records = RISConnector().get_records(start, end)
         
@@ -49,14 +53,17 @@ class search:
             r.validatePairs()
         
         # filter / paginate / sort items
+        total_pages = rprocessor.howManyPages(records)
         records = rprocessor.filter(records, statuses)
-        records = rprocessor.sort(records) # FIXME: add sort param later
-        records = rprocessor.paginate(records) # FIXME: add page number param
+        records = rprocessor.sort(records, sortby, sortdir)
+        records = rprocessor.paginate(records, page)
         
         # jsonize
         # TODO: optimize so we're not using append operator
         json = ''
         json += '{'
+        json += '"page":%d,' % page
+        json += '"totalpages": %d,' % total_pages
         json += '"numresults":"%d",' % len(records)
         json += '"records": ['
         for rec in records:
@@ -64,7 +71,5 @@ class search:
             json += ',' # FIXME: trailing comma not valid JSON (IE hates this)
         json += ']'
         json += '}'
-        
-        #Logger().log(json)
-        
+                
         return json

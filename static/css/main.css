@@ -106,3 +106,18 @@ ul#results li.record h3:hover {
 ul#results li.record p {
     display: none;
 }
+
+/*----pagination------*/
+#pagination {
+    margin: 10px 0 0 0;
+}
+
+.current_page {
+    background-color: lime;
+}
+.page_select {
+    margin-right: 2px;
+    background-color: #eee;
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+}
