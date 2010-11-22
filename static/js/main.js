@@ -146,7 +146,7 @@ function doSubmit(options) {
 			updateNumberResults(data);
 			
             //update pagination
-            updatePagination(data);	    
+            updatePagination(data);
 		}
 	});
 }
