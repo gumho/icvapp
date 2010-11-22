@@ -10,7 +10,7 @@ class RISRecord():
         self.accession = accession
         self.referring = referring
         self.visit = visit
-        self.date = date
+        self.date = date # this is a datetime!
         self.codepairs = []
     
     def get_pairs(self):
@@ -56,7 +56,7 @@ class RISRecord():
             <td>%s</td>\
             <td>%s</td>\
         </tr>\
-        " % (self.date, 'time', self.accession, self.getStatus())
+        " % (self.date, self.getTime(), self.accession, self.getStatus())
         
         for p in self.codepairs:
             html += "\
@@ -65,10 +65,10 @@ class RISRecord():
         return html
         
     def getTime(self):
-        return 'todo'
+        return 'todo' # TODO
     
     def getDate(self):
-        return 'todo'
+        return 'todo' # TODO
 
     def getStatus(self):
         for pair in self.codepairs:
