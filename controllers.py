@@ -48,7 +48,7 @@ class search:
         #re-assign records to just risrecord objects
         records = risrecs.values()
 
-        # validate records
+        # call validate method on records
         for r in records:
             r.validatePairs()
         
@@ -59,18 +59,18 @@ class search:
         records = rprocessor.paginate(records, page)
         
         # jsonize
-        # TODO: optimize so we're not using append operator
-        json = ''
-        json += '{'
-        json += '"page":%d,' % page
-        json += '"totalpages": %d,' % total_pages
-        json += '"numresults":"%d",' % len(records)
-        json += '"records": ['
+        json = ['{',
+        '"page":%d,' % page,
+        '"totalpages": %d,' % total_pages,
+        '"numresults":"%d",' % len(records),
+        '"records": ['
+        ]
+        
         for i in range(len(records)):
-            json += records[i].json()
+            json.append(records[i].json())
             if(i + 1 < len(records)):
-                json += ','
-        json += ']'
-        json += '}'
+                json.append(',')
                 
-        return json
+        json.append(']}')
+                
+        return ''.join(json)
