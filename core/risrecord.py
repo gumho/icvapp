@@ -97,10 +97,12 @@ class CodePair():
             self.status = 'failed'
     
     def json(self):
-        json = ''
-        json += '{'
-        json += '"icd": "%s",' % self.icd
-        json += '"cpt": "%s",' % self.cpt
-        json += '"status": "%s"' % self.status
-        json += '}'
-        return json
+        """returns representation of self in JSON"""
+        json = ['{', 
+        '"icd": "%s",' % self.icd,
+        '"cpt": "%s",' % self.cpt,
+        '"status": "%s"' % self.status,
+        '}'
+        ]
+        
+        return ''.join(json)
