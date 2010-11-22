@@ -6,7 +6,7 @@ This module has methods for filtering, sorting, and
 paginating a list of risrecords.
 """
 
-PER_PAGE = 5
+PER_PAGE = 10
 
 def filter(records, statuses):
     """takes a list of risrecords and removes statuses 
