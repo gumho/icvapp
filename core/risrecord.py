@@ -47,23 +47,6 @@ class RISRecord():
         
         return json
         
-    def html(self):
-        """return record as HTML table row"""
-        html = "\
-        <tr>\
-            <td>%s</td>\
-            <td>%s</td>\
-            <td>%s</td>\
-            <td>%s</td>\
-        </tr>\
-        " % (self.date, self.getTime(), self.accession, self.getStatus())
-        
-        for p in self.codepairs:
-            html += "\
-            %s : %s - %s<br>\
-            " % (p.icd, p.cpt, p.status)
-        return html
-        
     def getTime(self):
         return 'todo' # TODO
     
