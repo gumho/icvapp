@@ -30,6 +30,7 @@ icvapp
 	    risconnector.py
 	models (schema mappings)
 	    rismodel.py
+	rprocessor.py (result record processing module [sort, filter, paginate])
 	static (static content)
 	    css
 	    images

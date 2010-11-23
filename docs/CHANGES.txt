@@ -1,6 +1,14 @@
 ============================
 Changelog
 ============================
+11/9/10 - 11/22/10
+-search functionality COMPLETED!
+-javascript ajax handling completed
+-custom record filtering, sorting implementation finished
+-optimized performance of search handling
+-frontend overhaul
+-pagination working now
+-time/date conversion functions completed
 
 10/29/10 - 11/9/10 
 -added sqlalchemy models
