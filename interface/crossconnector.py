@@ -7,9 +7,3 @@ class CrossConnector:
     def validate(self, icd, cpt):
         checker = CrossChecker()
         return checker.checkPair(icd, cpt)
-        
-	def validatePairs(self, code_pair_list):
-		"""Takes a list of records and batch checks them. returns list 
-		with results. Returs false if not.
-		"""
-        pass
