@@ -118,7 +118,7 @@ function doSubmit(options) {
     var merged = Object.extend(sendData, options);
     
     $.ajax({
-		type: 'post',
+		type: 'get',
 		url: '/search',
 		dataType: 'json',
 		traditional: true,

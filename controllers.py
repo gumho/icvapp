@@ -15,7 +15,7 @@ class search:
     """gets the search variables, searches for associated records,
     processes the records through the icd-cpt engine and returns results
     """
-    def POST(self):        
+    def GET(self):        
         # process search vars
         i = web.input(status=[])
         
