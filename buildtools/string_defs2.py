@@ -6,7 +6,7 @@ Created on Nov 22, 2010
 import re
 
 
-class string_defs():
+class StringUtils():
 
     def monthConvert(self, int):
         try:
