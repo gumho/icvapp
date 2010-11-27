@@ -6,7 +6,7 @@ Created on Nov 22, 2010
 import re
 
 
-class StringUtils():
+class DateViewUtil():
 
     def monthConvert(self, int):
         try:
