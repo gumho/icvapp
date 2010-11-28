@@ -25,6 +25,11 @@ function updatePagination(data) {
     var html = '';
     
     var pages = data.totalpages;
+    
+    if(pages != 0) {
+        html += 'Page ';
+    }
+    
     for(var i=1;i<=pages;i++) {
         if(i == page) {
             html += "<a href='#' class='current_page'>" + i + "</a>";
