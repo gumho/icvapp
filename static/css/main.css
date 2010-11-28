@@ -67,7 +67,10 @@ a {
                 vertical-align: middle;
                 left: -20px;
             }
-            
+    #search_btn {
+        width: 80px;
+    }
+
     #options {
         display: none;
     }
