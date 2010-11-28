@@ -79,7 +79,7 @@ function createRow(record) {
 	
 	row += "<li class='record'>\
 	<h3>\
-		<span class='date'>" + record.date + "</span>\
+		<span class='date date_fold'>" + record.date + "</span>\
 		<span class='time'>" + record.time + "</span>\
 		<span class='accession'>" + record.accession + "</span>";
 	
@@ -161,6 +161,7 @@ $(document).ready(function() {
     
     //accordion
     $("ul#results li h3").live('click', function() {
+        $('span:first-child', this).toggleClass('date_fold date_unfold');
        $(this).next().toggle('slow'); 
     });
     

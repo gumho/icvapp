@@ -92,7 +92,19 @@ a {
     background: #fff !important; 
 }
 .date, .time, .accession, .status, .status-fail, .status-pass { display: inline-block; padding: 5px;}
-.date { width: 130px;}
+.date { 
+    width: 130px;
+    text-indent: 15px;
+}
+.date_unfold {
+    background: transparent url(/static/images/unfold.png) no-repeat;
+    
+}
+
+.date_fold {
+    background: transparent url(/static/images/fold.png) no-repeat;
+}
+
 .time { width: 170px;}
 .accession { width: 90px;}
 .status, .status-fail, .status-pass { width: 130px; text-align: right;}
