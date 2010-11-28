@@ -83,7 +83,7 @@ a {
 
 /*-----results------*/
 #results {
-    font-size: 10px;
+    font-size: 12px;
 }
 #result_header {
     cursor: default;
@@ -93,8 +93,8 @@ a {
 }
 .date, .time, .accession, .status, .status-fail, .status-pass { display: inline-block; padding: 5px;}
 .date { width: 130px;}
-.time { width: 130px;}
-.accession { width: 130px; text-align: center;}
+.time { width: 170px;}
+.accession { width: 90px;}
 .status, .status-fail, .status-pass { width: 130px; text-align: right;}
     .status-fail { color: coral;}
     .status-pass { color: green;}
