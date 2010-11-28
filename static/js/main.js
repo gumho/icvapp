@@ -116,7 +116,7 @@ function doSubmit(options) {
     var sendData = {
         'begin_date' : sqlDate(start),
 		'end_date' : sqlDate(end),
-		'status' : status,
+		'status' : status
     }
     
     //merge with optional
