@@ -31,8 +31,8 @@ class RISRecord():
         json = ''
         json += '{'
         json += '"accession" : "%s",' % self.accession
-        json += '"date" : "%s",' % self.getDate()
-        json += '"time" : "%s",' % self.getTime() # TODO
+        json += '"date" : "%s",' % self.getDate() # TODO / consider doing this on client-side
+        json += '"time" : "%s",' % self.getTime() # TODO / consider doing this on client-side
         json += '"status" : "%s",' % self.getStatus()
         json += '"codepairs" : ['
         
@@ -48,10 +48,10 @@ class RISRecord():
         return json
         
     def getTime(self):
-        return 'todo' # TODO
+        return '12:00 PM' # TODO
     
     def getDate(self):
-        return 'todo' # TODO
+        return 'Nov 23' # TODO
 
     def getStatus(self):
         for pair in self.codepairs:
