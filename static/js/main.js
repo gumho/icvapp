@@ -169,7 +169,7 @@ $(document).ready(function() {
     
     //more options
     $("#more_options_btn").toggle(function() {
-       $(this).html('Less options'); 
+       $(this).html('Fewer options'); 
     }, function() {
        $(this).html('More options');        
     });
