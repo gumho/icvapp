@@ -14,5 +14,8 @@ class RISConnector:
         end_date += ' 23:59:59'
 
         records = session.query(Study).filter(and_(Study.date >= start_date, Study.date <= end_date)).all()
-
+        
+        # close the session, return connections back to the pool
+        session.close()
+        
         return records
