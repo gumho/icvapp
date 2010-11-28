@@ -2,8 +2,11 @@ from sqlalchemy import create_engine
 from sqlalchemy import Column, Integer, String, DateTime
 from sqlalchemy.ext.declarative import declarative_base
 
-engine = create_engine('mysql://root:password@localhost/ris', echo=True,
-            pool_size=20, max_overflow=0)
+# engine w/debug & connection pooling
+# engine = create_engine('mysql://root:password@localhost/ris', echo=True,
+#             pool_size=20, max_overflow=0)
+
+engine = create_engine('mysql://root:password@localhost/ris')
 
 Base = declarative_base()
 class Study(Base):
