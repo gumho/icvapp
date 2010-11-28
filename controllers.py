@@ -54,6 +54,7 @@ class search:
         
         # filter / paginate / sort items
         total_pages = rprocessor.howManyPages(records)
+        num_results = len(records)
         records = rprocessor.filter(records, statuses)
         records = rprocessor.sort(records, sortby, sortdir)
         records = rprocessor.paginate(records, page)
@@ -62,7 +63,7 @@ class search:
         json = ['{',
         '"page":%d,' % page,
         '"totalpages": %d,' % total_pages,
-        '"numresults":"%d",' % len(records),
+        '"numresults":"%d",' % num_results,
         '"records": ['
         ]
         
