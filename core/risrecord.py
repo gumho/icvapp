@@ -1,5 +1,6 @@
 from interface.crossconnector import CrossConnector
 from utils.logger import Logger
+from utils import dateutils
 
 class RISRecord():
     """RISRecord is a representation of one 'study' in the RIS system. This constitutes
@@ -48,11 +49,11 @@ class RISRecord():
         return json
         
     def getTime(self):
-        return '12:00 PM' # TODO
+        return dateutils.sql_datetime_to_12hr_time(str(self.date))
     
     def getDate(self):
-        return 'Nov 23' # TODO
-
+        return dateutils.sql_datetime_to_human_date(str(self.date))
+        
     def getStatus(self):
         for pair in self.codepairs:
             if pair.status is 'failed':
