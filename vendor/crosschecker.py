@@ -12,7 +12,14 @@ class CrossChecker():
         not. We are only interested in a boolean result. Here, we have hard-coded the checking 
         behaviour to report one incorrect code pair for every three pairs"""
         
-        if random.randrange(1,11) % 10 == 0:
+        # supposed 1/10 fail rate
+        # if random.randrange(1,11) % 10 == 0:
+        #     return False
+        
+        # if icd contains a 0, fail it.
+        # use this method for more stable control over
+        # fail/pass outcomes. less chaos this way.
+        if icd.find('0') != -1:
             return False
         else:
             return True
