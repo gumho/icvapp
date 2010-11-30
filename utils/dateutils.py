@@ -17,24 +17,24 @@ months = {
     '12':'Dec',
 }
 
-def sql_datetime_to_human_date(datetime):
+def sql_datetime_to_human_date(dt):
     """converts sql datetime to human readable date. ex. 2010-11-29 10:30:15 => Nov 29"""
-    m = months[datetime[5:7]]
-    d = datetime[8:10]
-    y = datetime[0:4]
+    m = months[dt[5:7]]
+    d = dt[8:10]
+    y = dt[0:4]
     
     if(y == str(now.year)):
         y = ''
     else:
         y = ', %s' % y
     
-    return ''.join([m, ' ', d, y])    
+    return ''.join([m, ' ', d, y])
 
-def sql_datetime_to_12hr_time(datetime):
+def sql_datetime_to_12hr_time(dt):
     """converts sql datetime to human readable time. ex. 2010-11-29 13:30:15 => 1:30 PM"""
-    h = to12(datetime[11:13])
-    m = datetime[14:16]
-
+    h = to12(dt[11:13])
+    m = dt[14:16]
+    
     if(h > 12): 
         suf = 'PM'
     else: 
