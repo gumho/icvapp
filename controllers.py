@@ -52,12 +52,12 @@ class search:
         for r in records:
             r.validatePairs()
         
-        # filter / paginate / sort items
-        total_pages = rprocessor.howManyPages(records)
+        # filter / sort items
         records = rprocessor.filter(records, statuses)
         records = rprocessor.sort(records, sortby, sortdir)
         
         #get number of results before we paginate
+        total_pages = rprocessor.howManyPages(records)
         num_results = len(records)
         
         records = rprocessor.paginate(records, page)
