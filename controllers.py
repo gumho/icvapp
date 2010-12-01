@@ -10,7 +10,11 @@ render = web.template.render('templates/', base='base')
 class index:
     def GET(self):
         return render.index()
-		
+
+class faq:
+    def GET(self):
+        return render.faq()
+        
 class search:
     """gets the search variables, searches for associated records,
     processes the records through the icd-cpt engine and returns results

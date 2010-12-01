@@ -1,12 +1,14 @@
 /*-------global/absolutes------*/
 body {
+    padding: 0;
+    margin: 0;
 	font-size: 13px;
 	font-family: Tahoma;
 	overflow-y: scroll;
 	color: #555;
 }
 
-ul, li, form, img {
+ul, ol, li, form, img {
 	border: none;
     list-style-type: none;
     margin: 0;
@@ -26,16 +28,28 @@ a {
 }
 
 #logo {
-    z-index: -100;
-    background: #ccc;
-    padding: 5px;
-    border-right: 1px solid #eee;
+    padding: 0px;
     position: absolute;
     left: 0;
 }
+    #logo h1, #logo h2 { position: relative; padding: 5px; }
+    #logo h1:hover { border-left: 5px solid #ccc;}
+    #logo h2:hover { border-left: 5px solid #eee;}
+    #logo a { color: #555; text-decoration: none; }
+
     #logo h1 {
+        width: 80px;
+        font-size: 20px;
+        background: #ccc;
         margin: 0;
-        padding: 0;
+    }
+    
+    #logo h2 {
+        font-weight: normal;
+        width: 60px;
+        font-size: 13px;
+        background: #eee;
+        margin: 10px 0 0 0;
     }
 
 /*-------search---*/
@@ -140,4 +154,9 @@ ul#results li.record p {
 .page_select {
     background-color: #eee;
     border-bottom: 1px solid #ccc;
+}
+
+/*---faq-----*/
+#faq_contents {
+
 }
