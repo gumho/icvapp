@@ -11,7 +11,7 @@ class RISRecord():
         self.accession = accession
         self.referring = referring
         self.visit = visit
-        self.date = date # this is a datetime!
+        self.date = date # this is a python 'date' object, datetime included!
         self.codepairs = []
     
     def get_pairs(self):
@@ -49,9 +49,15 @@ class RISRecord():
         return json
         
     def getTime(self):
+        # TODO: self.date is a date object. consider changing date utils 
+        # to accept separate parameters so we don't have to do casts to
+        # string
         return dateutils.sql_datetime_to_12hr_time(str(self.date))
     
     def getDate(self):
+        # TODO: self.date is a date object. consider changing date utils 
+        # to accept separate parameters so we don't have to do casts to
+        # string
         return dateutils.sql_datetime_to_human_date(str(self.date))
         
     def getStatus(self):
