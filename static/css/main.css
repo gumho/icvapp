@@ -144,16 +144,12 @@ ul#results li.record p {
 
 .current_page, .page_select {
     margin-right: 8px;
-    padding: 5px;
     text-decoration: none;
 }
 .current_page {
-    background-color: #ccc;
-    border-bottom: 1px solid #ccc;    
+    text-decoration: underline;
 }
 .page_select {
-    background-color: #eee;
-    border-bottom: 1px solid #ccc;
 }
 
 /*---faq-----*/
