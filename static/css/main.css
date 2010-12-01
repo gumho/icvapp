@@ -93,7 +93,7 @@ a {
 }
 .date, .time, .accession, .status, .status-fail, .status-pass { display: inline-block; padding: 5px;}
 .date { 
-    width: 130px;
+    width: 150px;
     text-indent: 15px;
 }
 .date_unfold {
@@ -105,7 +105,7 @@ a {
     background: transparent url(/static/images/fold.png) no-repeat;
 }
 
-.time { width: 170px;}
+.time { width: 150px;}
 .accession { width: 90px;}
 .status, .status-fail, .status-pass { width: 130px; text-align: right;}
     .status-fail { color: coral;}
