@@ -162,7 +162,7 @@ $(document).ready(function() {
     //accordion
     $("ul#results li h3").live('click', function() {
         $('span:first-child', this).toggleClass('date_fold date_unfold');
-       $(this).next().toggle('slow'); 
+        $(this).next().toggle('slow'); 
     });
     
     //search button
