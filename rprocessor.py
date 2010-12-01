@@ -16,18 +16,20 @@ def filter(records, statuses):
         
     return records
     
-    
-# TODO: make two params needed, asc/desc as well as the column needed 
-# as suggested by francesco
 def sort(records, by='status', sortdir='asc'):
     """sorts records by provided 'by' key. returns sorted records."""
-    # TODO: sort by asc/desc
+    
+    if sortdir == 'desc':
+        SORT_FLAG = True
+    else:
+        SORT_FLAG = False
+        
     if by == 'date':
-        records = sorted(records, key=attrgetter('date'))
+        records = sorted(records, key=attrgetter('date'), reverse=SORT_FLAG)
     elif by == 'accession':
-        records = sorted(records, key=attrgetter('accession'))
+        records = sorted(records, key=attrgetter('accession'), reverse=SORT_FLAG)
     elif by == 'status':
-        records = sorted(records, key=methodcaller('getStatus'))
+        records = sorted(records, key=methodcaller('getStatus'), reverse=SORT_FLAG)
 
     return records
     
