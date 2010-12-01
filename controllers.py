@@ -23,8 +23,8 @@ class search:
         end = i.end_date
         statuses = i.status # array
         
-        sortby = i.sortby if hasattr(i, 'sortby') else 'status'
-        sortdir = i.sortdir if hasattr(i, 'sortdir') else 'asc'
+        sortby = i.sortby if hasattr(i, 'sortby') else 'date'
+        sortdir = i.sortdir if hasattr(i, 'sortdir') else 'desc'
         page = int(i.page) if hasattr(i, 'page') else 1            
                 
         # get records in model.Study object format
