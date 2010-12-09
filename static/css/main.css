@@ -97,7 +97,11 @@ a {
         }
 
 /*-----results------*/
-#results { font-size: 11px; }
+#results { 
+    font-size: 11px;
+    margin-top: 10px;
+}
+#num_results { margin-top: 10px; }
 #result_header h3{ background: #fff !important; }
 
 ul#results li h3 { 
