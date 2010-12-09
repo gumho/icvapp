@@ -5,8 +5,7 @@ var session = {
     //sort tracking vars
     // asc=0, desc=1, unsorted=-1
     'date_sort': 1,
-    'time_sort': -1,
-    'accession_sort': 1,
+    'accession_sort': -1,
     'status_sort': -1
 };
 
@@ -167,8 +166,34 @@ function doSubmit(options) {
 }
 
 //sorting calls
-function sendSort() {
+function submitSort(sortColumn) {
+    //check the columns current sort direction and reverse it
+    var sortFlag = sortColumn + '_sort';
 
+    var dir = '';
+
+    if(session[sortFlag] == 0) {
+        session[sortFlag] = 1;
+        dir = 'desc';
+    } 
+    else if(session[sortFlag] == 1 || session[sortFlag] == -1) {
+        session[sortFlag] = 0;
+        dir = 'asc';
+    }
+    
+    //reset the vars
+    session.date_sort = -1;
+    session.accession_sort = -1;
+    session.status_sort = -1;
+    
+    if(dir == 'desc') {
+        session[sortFlag] = 1;
+    } else if(dir == 'asc') {
+        session[sortFlag] = 0;
+    }
+
+    doSubmit({'sortby': sortColumn, 'sortdir': dir});
+    
 }
 
 
@@ -228,6 +253,11 @@ $(document).ready(function() {
         var sendData = {'page':session.page};
         doSubmit(sendData);
         return false;
+    });
+    
+    //result header click handler (sorting)
+    $('#date_header a, #accession_header a, #status_header a').click(function() {
+        submitSort($(this).html().toLowerCase());
     });
 
 })
