@@ -32,7 +32,7 @@ function updatePagination(data) {
     
     for(var i=1;i<=pages;i++) {
         if(i == page) {
-            html += "<a href='#' class='current_page'>" + i + "</a>";
+            html += "<span class='current_page'>" + i + "</span>";
         } else {
             html += "<a href='#' class='page_select'>" + i + "</a>";            
         }
