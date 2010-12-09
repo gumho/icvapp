@@ -1,6 +1,15 @@
 ============================
 Changelog
 ============================
+11/22/10 - 12/10/10
+-sorting functionality completed 
+-LOTS and LOTS of major bug fixes (server and client -side)
+-update of pagination algorithm
+-faq page up (controller and template)
+-cross-browser stability fixes
+-structural changes in templates  
+-added fold "triangles" UI and logic
+
 11/9/10 - 11/22/10
 -search functionality COMPLETED!
 -javascript ajax handling completed
