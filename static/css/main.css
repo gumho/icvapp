@@ -89,7 +89,7 @@ a {
     #options {
         display: none;
     }
-        label {
+        #options label {
             margin-right: 10px;
         }
         #options_passed, #options_failed {
@@ -98,9 +98,14 @@ a {
 
 /*-----results------*/
 #results { 
-    font-size: 11px;
     margin-top: 10px;
 }
+
+#results span{
+    font-size: 12px;
+}
+
+
 #num_results { margin-top: 10px; }
 #result_header h3{ background: #fff !important; }
 
@@ -118,7 +123,7 @@ ul#results li.record p {
     padding: 20px;
 }
 
-#date_header a, #time_header a, #accession_header a, #status_header a { text-decoration: none; color: inherit; }
+#date_header a, #time_header a, #accession_header a, #status_header a { text-decoration: none; color: #555; }
 #date_header a:hover, #accession_header a:hover, #status_header a:hover { text-decoration: underline;}
 #time_header a { cursor: default !important;}
 
