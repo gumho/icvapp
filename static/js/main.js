@@ -1,5 +1,14 @@
-/*----------session globals, lol---------*/
-var page = 1;
+/*----------session object---------*/
+
+var session = {
+    'page': 1,
+    //sort tracking vars
+    // asc=0, desc=1, unsorted=-1
+    'date_sort': 1,
+    'time_sort': -1,
+    'accession_sort': 1,
+    'status_sort': -1
+};
 
 /*----------UTILS---------*/
 //takes '11/8/2010' and turns into '2010-11-08'
@@ -14,7 +23,7 @@ Object.extend = function(destination, source) {
     return destination;
 };
 
-/*---------RESULT FUNCTIONS----------*/
+/*---------RESULT HELPER FUNCTIONS----------*/
 //update number of results
 function updateNumberResults(data) {
 	$("#num_results p").html(data.numresults + ' results');
@@ -31,7 +40,7 @@ function updatePagination(data) {
     }
     
     for(var i=1;i<=pages;i++) {
-        if(i == page) {
+        if(i == session.page) {
             html += "<span class='current_page'>" + i + "</span>";
         } else {
             html += "<a href='#' class='page_select'>" + i + "</a>";            
@@ -104,6 +113,7 @@ function resultsToTable(data) {
     }
 }
 
+/*----------AJAX---------*/
 //submits the form, takes a hash of options
 function doSubmit(options) {
     //get normal variables
@@ -145,7 +155,7 @@ function doSubmit(options) {
             resultsToTable(data);
             
 		    //update page
-		    page = data.page;
+		    session.page = data.page;
 		    
 			//update number results
 			updateNumberResults(data);
@@ -155,6 +165,12 @@ function doSubmit(options) {
 		}
 	});
 }
+
+//sorting calls
+function sendSort() {
+
+}
+
 
 $(document).ready(function() {
     /*----------UI---------*/
@@ -201,15 +217,15 @@ $(document).ready(function() {
 	//search submit handler
 	$("#search_btn").click(function() {
         doSubmit({});
-        page = 1;
+        session.page = 1;
         
 		return false;
 	});
     
     $(".page_select").live('click', function() {
-        page = $(this).html();
+        session.page = $(this).html();
         
-        var sendData = {'page':page};
+        var sendData = {'page':session.page};
         doSubmit(sendData);
         return false;
     });
