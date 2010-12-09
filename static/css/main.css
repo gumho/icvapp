@@ -60,7 +60,8 @@ a {
 	display: inline-block;
     padding: 10px;
 	clear: left;
-	border-bottom: 1px solid #ccc;	
+	border-bottom: 1px solid #ccc;
+	margin-top: 10px;
 }   
     #search p {
         margin: 10px 0 0 0;
