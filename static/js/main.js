@@ -175,13 +175,17 @@ $(document).ready(function() {
        $(this).html('More options');        
     });
     
-	//option defaults
+	//datepicker defaults
     $("#begin_date, #end_date").datepicker({
 		defaultDate: -5,
         maxDate: 0,
         showOn: "button",
 		buttonImage: "/static/images/cal.png",
 		buttonImageOnly: true
+    }).keydown(function(event) {
+        if(event.which === $.ui.keyCode.ENTER) {
+            $('#search_btn').click();
+        }
     });
     
     //set today's date
