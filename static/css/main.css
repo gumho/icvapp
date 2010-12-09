@@ -115,7 +115,7 @@ ul#results li.record p {
     padding: 20px;
 }
 
-
+#date_header a, #time_header a, #accession_header a, #status_header a { text-decoration: none; color: inherit; }
 #date_header, #time_header, #accession_header, #status_header,
 .date, .time, .accession, .status, .status-fail, .status-pass { display: inline-block; padding: 5px;}
 
