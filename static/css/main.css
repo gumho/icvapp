@@ -111,6 +111,8 @@ ul#results li.record h3:hover {
 }
 ul#results li.record p {
     display: none;
+    margin: 0;
+    padding: 20px;
 }
 
 
