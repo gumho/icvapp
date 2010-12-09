@@ -8,7 +8,7 @@ body {
 	color: #555;
 }
 
-ul, ol, li, form, img {
+ul, ol, li, form, img, p {
 	border: none;
     list-style-type: none;
     margin: 0;
@@ -24,7 +24,7 @@ a {
 
 #wrapper {
 	width: 600px;
-    margin: 0 auto;
+    margin: 10px auto 10px auto;
 }
 
 #logo {
