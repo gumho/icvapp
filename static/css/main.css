@@ -116,6 +116,8 @@ ul#results li.record p {
 }
 
 #date_header a, #time_header a, #accession_header a, #status_header a { text-decoration: none; color: inherit; }
+#date_header a:hover, #accession_header a:hover, #status_header a:hover { text-decoration: underline;}
+#time_header a { cursor: default !important;}
 #date_header, #time_header, #accession_header, #status_header,
 .date, .time, .accession, .status, .status-fail, .status-pass { display: inline-block; padding: 5px;}
 
