@@ -96,34 +96,10 @@ a {
         }
 
 /*-----results------*/
-#results {
-    font-size: 11px;
-}
-#result_header {
-    cursor: default;
-}
-#result_header h3{
-    background: #fff !important; 
-}
-.date, .time, .accession, .status, .status-fail, .status-pass { display: inline-block; padding: 5px;}
-.date { 
-    width: 150px;
-    text-indent: 15px;
-}
-.date_unfold {
-    background: transparent url(/static/images/unfold.png) no-repeat;
-    
-}
+#results { font-size: 11px; }
+#result_header { cursor: default; }
+#result_header h3{ background: #fff !important; }
 
-.date_fold {
-    background: transparent url(/static/images/fold.png) no-repeat;
-}
-
-.time { width: 150px;}
-.accession { width: 90px;}
-.status, .status-fail, .status-pass { width: 130px; text-align: right;}
-    .status-fail { color: coral;}
-    .status-pass { color: green;}
 ul#results li h3 { 
     cursor:pointer;
     background: transparent url(/static/images/listgrad.png) repeat;
@@ -136,6 +112,23 @@ ul#results li.record h3:hover {
 ul#results li.record p {
     display: none;
 }
+
+
+#date_header, #time_header, #accession_header, #status_header,
+.date, .time, .accession, .status, .status-fail, .status-pass { display: inline-block; padding: 5px;}
+
+#date_header, .date { 
+    width: 150px;
+    text-indent: 15px;
+}
+.date_unfold { background: transparent url(/static/images/unfold.png) no-repeat; }
+.date_fold { background: transparent url(/static/images/fold.png) no-repeat; }
+
+#time_header, .time { width: 150px;}
+#accession_header, .accession { width: 90px;}
+#status_header, .status, .status-fail, .status-pass { width: 130px; text-align: right;}
+    .status-fail { color: coral;}
+    .status-pass { color: green;}
 
 /*----pagination------*/
 #pagination {
