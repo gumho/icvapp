@@ -32,24 +32,15 @@ a {
     position: absolute;
     left: 0;
 }
-    #logo h1, #logo h2 { position: relative; padding: 5px; }
-    #logo h1:hover { border-left: 5px solid #ccc;}
-    #logo h2:hover { border-left: 5px solid #eee;}
-    #logo a { color: #555; text-decoration: none; }
-
-    #logo h1 {
-        width: 80px;
-        font-size: 20px;
-        background: #ccc;
-        margin: 0;
-    }
-    
-    #logo h2 {
-        font-weight: normal;
-        width: 60px;
-        font-size: 13px;
-        background: #eee;
-        margin: 10px 0 0 0;
+    #logo a { 
+        border-bottom: 1px solid #bbb;
+        margin-top: 4px;
+        background-color: #eee;
+        display:block;
+        position: relative; 
+        padding: 5px;
+        color: #555; 
+        text-decoration: none; 
     }
 
 /*-------search---*/
