@@ -105,6 +105,9 @@ ul#results li h3 {
     font-weight: normal;
     margin: 0;
 }
+ul#results li.record:hover {
+	cursor: pointer;
+}
 ul#results li.record h3:hover { 
     background: transparent url(/static/images/listgradinverse.png) repeat;
 }
