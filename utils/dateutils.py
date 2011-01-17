@@ -3,15 +3,15 @@ import datetime
 now = datetime.datetime.now()
 
 months = {
-    '1':'Jan',
-    '2':'Feb',
-    '3':'Mar',
-    '4':'Apr',
-    '5':'May',
-    '6':'Jun',
-    '7':'Jul',
-    '8':'Aug',
-    '9':'Sep',
+    '01':'Jan',
+    '02':'Feb',
+    '03':'Mar',
+    '04':'Apr',
+    '05':'May',
+    '06':'Jun',
+    '07':'Jul',
+    '08':'Aug',
+    '09':'Sep',
     '10':'Oct',
     '11':'Nov',
     '12':'Dec',
@@ -47,6 +47,6 @@ def to12(hour24):
 
     
 if __name__ == '__main__':
-    # print sql_datetime_to_human_date('2010-11-29 10:30:15')
-    print sql_datetime_to_12hr_time('2010-11-29 01:40:15')
+     print sql_datetime_to_human_date('2011-01-01 10:30:15')
+    # print sql_datetime_to_12hr_time('2010-11-29 01:40:15')
     # print to12(10)
