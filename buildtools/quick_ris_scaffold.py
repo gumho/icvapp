@@ -1,11 +1,11 @@
 from random import randrange, randint
 
 if __name__ == '__main__':
-    _id = 323456
+    _id = 556555
     
-    for i in range(1,1000):
+    for i in range(1,50):
         _id += 1
-        acc = str(randint(1000, 999999))
+        acc = str(randint(55555, 999999))
         # acc = 24242424
         
         ref = str("'steven'")
@@ -13,9 +13,9 @@ if __name__ == '__main__':
         cpt = str(randint(10000,99999))
         icd = "'" + str(randint(100,999)) + '.' + str(randrange(1, 99)) + "'"
         
-        year = str(randint(2006,2010))
-        month = str(randint(10,12))
-        day = str(randint(10,30))
+        year = str(randint(2011,2011))
+        month = str(randint(1,1))
+        day = str(randint(1,15))
         h = str(randint(10,23))
         m = str(randint(10, 59))
         s = str(randint(10,59))
