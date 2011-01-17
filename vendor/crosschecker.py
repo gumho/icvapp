@@ -24,6 +24,7 @@ class CrossChecker():
         else:
             return True
 
+# mini-test to check for probability of random checkpairs. CURRENTLY DEFUNCT
 if __name__ == '__main__':
     t = 0
     f = 0
