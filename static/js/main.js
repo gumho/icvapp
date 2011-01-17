@@ -150,10 +150,9 @@ function doSubmit(options) {
 		traditional: true,
 		data: merged,
         beforeSend: function() {
-            //TODO: validation for...
-            //dates aren't valid range
-            
-            //if no checkboxes checked                
+            if(!validateDates()) {
+				return false;
+			}
         },
         error: function() {
             
