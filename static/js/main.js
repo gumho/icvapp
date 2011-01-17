@@ -22,6 +22,18 @@ Object.extend = function(destination, source) {
     return destination;
 };
 
+//validate dates
+function validateDates() {
+	var bDate = $("#begin_date").val();
+	var eDate = $("#end_date").val();
+	
+	//validate correct date syntax
+	var datePattern = /\d{1,2}\/\d{1,2}\/\d{4}/;
+	if(bDate.match(datePattern) != null && eDate.match(datePattern) != null) {
+		return true;
+	}
+}
+
 /*---------RESULT HELPER FUNCTIONS----------*/
 //update number of results
 function updateNumberResults(data) {
