@@ -44,9 +44,3 @@ def sql_datetime_to_12hr_time(dt):
     
 def to12(hour24):
     return str((int(hour24) % 12) if (int(hour24) % 12) > 0 else 12)
-
-    
-if __name__ == '__main__':
-     print sql_datetime_to_human_date('2011-01-01 10:30:15')
-    # print sql_datetime_to_12hr_time('2010-11-29 01:40:15')
-    # print to12(10)
