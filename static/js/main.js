@@ -248,6 +248,13 @@ $(document).ready(function() {
 	    $("#options").slideToggle();
 	});
 	
+	//date + time integrated hover
+	$("#date_header a, #time_header a").hover(function() {
+		$("#date_header a, #time_header a").css('text-decoration', 'underline');
+	}, function() {
+		$("#date_header a, #time_header a").css('text-decoration', 'none');
+	});
+	
     /*----------CORE---------*/
 	
 	//search submit handler
@@ -270,5 +277,8 @@ $(document).ready(function() {
     $('#date_header a, #accession_header a, #status_header a').click(function() {
         submitSort($(this).html().toLowerCase());
     });
+	$('#time_header a').click(function() {
+		$('#date_header a').click();
+	});
 
 })
