@@ -99,7 +99,7 @@ function createRow(record) {
 	
 	row += "<li class='record'>\
 	<h3>\
-		<span class='date date_fold'>" + record.date + "</span>\
+		<span class='date date_unfold'>" + record.date + "</span>\
 		<span class='time'>" + record.time + "</span>\
 		<span class='accession'>" + record.accession + "</span>";
 	
