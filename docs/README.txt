@@ -4,6 +4,8 @@ Dependencies
 1. web.py framework
 2. sqlalchemy
 3. python-mysqldb (for development)
+4. python-nose (for testing)
+5. python-paste (for testing)
 
 ============================
 Development Pre-Reqs
