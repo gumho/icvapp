@@ -13,6 +13,11 @@ Development Pre-Reqs
 1. Create the mock RIS database. "python models/rismodel.py"
 
 ============================
+Run unit/integration tests
+============================
+1. At top level of application, issue 'nosetests'
+
+============================
 Application Package Hierarchy
 ============================
 icvapp
