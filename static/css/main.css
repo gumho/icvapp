@@ -89,6 +89,7 @@ a {
 
 /*-----results------*/
 #results { 
+	display: none;
     margin-top: 10px;
 }
 

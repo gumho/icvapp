@@ -259,6 +259,10 @@ $(document).ready(function() {
 	
 	//search submit handler
 	$("#search_btn").click(function() {
+		//show results div
+		$('#results').fadeIn();
+		
+		//submit query
         doSubmit({});
         session.page = 1;
         
