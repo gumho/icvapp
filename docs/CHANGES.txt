@@ -1,6 +1,19 @@
 ============================
 Changelog
 ============================
+12/12/10 - 1/20/11
+-unit tests added, all are now structured 
+-integration tests added
+-search results ui default behaviour modified
+-cleaned up search start page, now table doesn't appear at start
+-date+time sort feature fixed so they are now one entity
+-validation schemes in place 
+-tool tips implemented
+-record cursor hover events added
+-navigation ui updated, broken buttons/hovers fixed
+-font rendering fixed
+-major bug fixes in client and server
+
 11/22/10 - 12/10/10
 -sorting functionality completed 
 -LOTS and LOTS of major bug fixes (server and client -side)
