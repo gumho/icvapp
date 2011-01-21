@@ -19,7 +19,7 @@ class search:
     """gets the search variables, searches for associated records,
     processes the records through the icd-cpt engine and returns results
     """
-    def GET(self):        
+    def GET(self):       	 
         # process search vars
         i = web.input(status=[])
         
@@ -80,5 +80,6 @@ class search:
                 json.append(',')
                 
         json.append(']}')
-                
+		
+        web.header('Content-Type', 'application/json') 
         return ''.join(json)
