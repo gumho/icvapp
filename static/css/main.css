@@ -1,10 +1,12 @@
 /*-------global/absolutes------*/
+html {
+    overflow-y: scroll;
+}
 body {
     padding: 0;
     margin: 0;
 	font-size: 13px;
 	font-family: Tahoma;
-	overflow: auto;
 	color: #555;
 }
 
@@ -31,6 +33,9 @@ a {
     padding: 0px;
     position: relative;
 }
+    #logo h1 a:hover {
+        color: #ccc;
+    }
     #logo h1 {
         margin-bottom: 0px;
     }
