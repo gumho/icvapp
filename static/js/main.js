@@ -208,7 +208,7 @@ function submitSort(sortColumn) {
 
 $(document).ready(function() {
     /*----------UI---------*/
-    
+
     //accordion
     $("ul#results li:not(#result_header) h3").live('click', function() {
         $('span:first-child', this).toggleClass('date_fold date_unfold');
