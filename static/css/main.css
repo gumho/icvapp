@@ -32,7 +32,13 @@ a {
     position: absolute;
     left: 0;
 }
+    #logo h1 {
+        font-family: Arial;
+        text-indent: 4px;
+        letter-spacing: -2px;
+    }
     #logo a { 
+        text-align: center;
         border-bottom: 1px solid #bbb;
         margin-top: 4px;
         background-color: #eee;
