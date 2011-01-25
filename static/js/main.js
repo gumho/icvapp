@@ -99,9 +99,7 @@ function createRow(record) {
 	
 	row += "<li class='record'>\
 	<h3>\
-		<span class='date date_unfold'>" + record.date + "</span>\
-		<span class='time'>" + record.time + "</span>\
-		<span class='accession'>" + record.accession + "</span>";
+		<span class='date date_unfold'>" + record.date + "</span><span class='time'>" + record.time + "</span><span class='accession'>" + record.accession + "</span>";
 	
 	if(record.status == 'passed') {
 		row += "<span class='status-pass'>" + record.status + "</span>";
