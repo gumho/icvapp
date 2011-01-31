@@ -282,5 +282,11 @@ $(document).ready(function() {
 	$('#time_header a').click(function() {
 		$('#date_header a').click();
 	});
+	
+	/* for FAQ */
+	$('ol#faq_contents a').click(function() {
+		var toAnchor = $(this).attr('href');
+		$(toAnchor).effect("highlight",{}, 2000);
+	});
 
 })
