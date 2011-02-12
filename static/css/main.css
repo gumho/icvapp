@@ -45,11 +45,6 @@ a {
         text-decoration: none;
         color: #555;
     }
-    
-    a#faq {
-        position: absolute;
-        right: 0;
-    }
 
 /*-------search---*/
 #search {
@@ -61,7 +56,13 @@ a {
 	clear: left;
 	border-bottom: 1px solid #ccc;
 	margin-top: 10px;
+	position: relative;
 }   
+	a#faq {
+        position: absolute;
+        right: 10px;
+    }
+
     #search p {
         margin: 10px 0 0 0;
     }
