@@ -286,7 +286,13 @@ $(document).ready(function() {
 	});
 	
 	/* for FAQ */
-	$('ol#faq_contents a').click(function() {
+	$('a[href="#quick_start"]').toggle(function() {
+		$('#guide-content').show();
+		$('#guide-content').effect("highlight", {}, 2000);
+	}, function() {
+		$('#guide-content').hide();
+	});
+	$('#faq_contents a').click(function() {
 		var toAnchor = $(this).attr('href');
 		$(toAnchor).effect("highlight",{}, 2000);
 	});

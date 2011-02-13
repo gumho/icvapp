@@ -1,46 +1,67 @@
 $var js: /static/js/main.js
-<h3>ICVApp Help Topics</h3>
 
+<br>
 <a href="/">Back to home</a>
-<br>
-<br>
+
+<h3>ICVApp Help Topics</h3>
+<h4>Guides</h4>
+<ol id="guides">
+    <li><a href="#quick_start">Quick-Start Guide</a></li>
+</ol>
+<div id="guide-content">
+    <p>
+        <br>
+        ICVerify is an application to verify matching ICD and CPT codes in patient records. Use ICVerify to search for records in the RIS database and check whether the ICD and CPT codes contained within are errors. To get started:
+
+        <h5>Step 1. Select the date range</h5>
+        <p>
+            Click on the calendar icons to select the date range for which your desired records exist.
+        </p>
+        <h5>Step 2. Make the search</h5>
+        <p>
+            Click 'Search' to issue a search the RIS for your records. Optionally, click on 'More options' to pick what results show up. "Passed" results are records that do not have errors while "Failed" results do.
+        </p>
+        <h5>Step 3. Understand the results</h5>
+        <p>
+            When the results come back, notice that each result block represents a single record. You can view a record's date, time, accession number, and status. If a record is "failed", you will see a "Not Correct" header in the record block. Here, the ICD and CPT pairs found to be incorrect will be listed.
+            <br>
+            <br>
+            TIP: If you would like to sort the results, click on the column headers above the results.
+        </p>
+        <h5>Step 4. Make the fix</h5>
+        <p>
+            Switch to the RIS application and correct the ICD/CPT codes. When you make another search on ICVerify, you should notice now that the record does not appear as "failed".
+        </p>
+    </p>
+
+</div>
+
+<h4>Frequently Asked Questions</h4>
 
 <ol id="faq_contents">
-	<li><a href="#how_search">How do I make a search?</a></li>
-	<li><a href="#how_edit_dates">How do I edit the dates for my search?</a></li>
 	<li><a href="#how_expand_view">How do I expand the view of individual accession numbers?</a></li>
 	<li><a href="#how_know_passed_failed">How do I know if a test result has passed or failed?</a></li>
-	<li><a href="#how_refresh">How do I refresh my search results?</a></li>
-	<li><a href="#are_advanced">Are there any advanced search options?</a></li>
+	<li><a href="#how_refresh">How long does it take for the system to update its records?</a></li>
+	<li><a href="#can_view_passed">Can I view passed records?</a></li>
 </ol>
 
-<div id="how_search">
-	<h4>How do I make a search?</h3>
-	<p>On the main screen of the application, you select the date range you want to view, then check whether you want passed results, failed results, or all results, and then clicking search</p>
-</div>
-
-<div id="how_edit_dates">
-	<h4>How do I edit the dates for my search?</h3>
-	<p>Click on either textbox containing the date, and a small calendar will automatically appear by your mouse. Then proceed by clicking on a date on the calendar, to mark either the beginning or ending date range </p>
-</div>
-
 <div id="how_expand_view">
-	<h4>How do I expand the view of individual accession numbers?</h3>
-	<p>To expand the view of individual accession numbers, simply click on the row and it will automatically show detailed information on the accession number. </p>
+	<h5>Can I minimize the view of an individual search record?</h3>
+	<p>Yes, simply click on the row and the row will collapse.</p>
 </div>
 
 <div id="how_know_passed_failed">
-	<h4>How do I know if a test result has passed or failed?</h3>
+	<h5>How do I know if a test result has passed or failed?</h3>
 	<p>When viewing the results listings, each accession number will display its status located on the right hand side of the listing, which will display either a "pass" result or a "fail" result </p>
 </div>
 
 <div id="how_refresh">
-	<h4>How do I refresh my search results?</h3>
-	<p>To refresh your current search results, simply click search again, as the search dates will remain the same as when you first queried the search.</p>
+	<h5>How long does it take for the system to update its records?</h3>
+	<p>Instantaneously. Clicking 'search' will search all records in the RIS at the time of the search.</p>
 </div>
 
-<div id="are_advanced">
-	<h4>Are there any advanced search options?</h3>
-	<p>Yes, click on "options" located at the top of the page, and you will be redirected to an options page to customize your search results.</p>
+<div id="can_view_passed">
+	<h5>Can I view passed records?</h3>
+	<p>Yes, click on 'More options' and select the 'passed' checkbox and press 'Search'.</p>
 </div>
 

@@ -21,6 +21,10 @@ a {
 	color: #4297D7;
 }
 
+h5 {
+	margin-bottom: 5px;
+}
+
 .clear { clear: both; }
 .inline { display: inline ;}
 
@@ -165,6 +169,6 @@ ul#results li.record p {
 }
 
 /*---faq-----*/
-#faq_contents {
-
+#guide-content {
+	display: none;
 }

@@ -8,6 +8,8 @@ Features
 -Back button added to 'Help' page
 -Pagination added to bottom of results in addition to top
 -Updated all test files with relevant comments/info
+-Updated FAQ content to latest versions
+-Updated the Help page with Quick start guide
 
 Fixes
 -Fixed broken validation of dates! (identified during last execution test)
