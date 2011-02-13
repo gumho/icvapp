@@ -31,20 +31,21 @@ a {
 
 #logo {
     padding: 0px;
-    position: relative;
 }
-    #logo h1 a:hover {
-        color: #ccc;
-    }
-    #logo h1 {
-        margin-bottom: 0px;
-    }
-    #logo h1 a {
-        font-family: Arial;
-        letter-spacing: -2px;
-        text-decoration: none;
-        color: #555;
-    }
+	#logo a {
+		text-indent: -9999px;
+		display: block;
+		width: 150px;
+		height: 58px;
+		background: transparent url(../images/logo.png) no-repeat left top;
+	}
+	#logo a:hover {
+		background: transparent url(../images/logo-hover.png) no-repeat left top;
+	}
+
+#instructions {
+	margin-top: 10px;
+}
 
 /*-------search---*/
 #search {
