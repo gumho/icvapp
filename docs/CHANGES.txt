@@ -1,6 +1,21 @@
 ============================
 Changelog
 ============================
+1/20/11 - 2/12/11
+Features
+-Added highlight-identifiers for FAQ links
+-Index layout updated (menu & logo now at top, 'help' anchor moved to search box)
+-Back button added to 'Help' page
+-Pagination added to bottom of results in addition to top
+-Updated all test files with relevant comments/info
+
+Fixes
+-Fixed broken validation of dates! (identified during last execution test)
+-Fixed pagination overflow (identified during last execution test)
+-Fixed erratic scrolling behavior (identified by Prof. Olsen)
+-Search results table width reduced (identified by Prof. Olsen)
+-Fixed BIG spacing errors in search results!
+
 12/12/10 - 1/20/11
 -unit tests added, all are now structured 
 -integration tests added
