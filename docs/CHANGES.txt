@@ -5,7 +5,7 @@ Changelog
 Features
 -Added highlight-identifiers for FAQ links
 -Index layout updated (menu & logo now at top, 'help' anchor moved to search box)
--Back button added to 'Help' page
+-Back button added to 'Help' page (as observed by sponsor/ UI test)
 -Pagination added to bottom of results in addition to top
 -Updated all test files with relevant comments/info
 -Updated FAQ content to latest versions
