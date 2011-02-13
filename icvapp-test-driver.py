@@ -25,7 +25,7 @@ def correct_number_studies_search_test():
 	r = testApp.get('/search', params={'begin_date': '1000-01-01', 'end_date': '3000-01-01', 'status': 'passed'})
 	r.mustcontain(NUM_RESULTS)
 
-# Verify whether detailed information and fields from a search are correct
+# Verify whether detailed information and fields from a given search are correct
 def correct_information_search_test():
 	middleware = []
 	testApp = TestApp(app.wsgifunc(*middleware))
