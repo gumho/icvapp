@@ -148,11 +148,12 @@ ul#results li.record p {
     .status-pass { color: green;}
 
 /*----pagination------*/
-#pagination {
+.pagination {
     margin: 10px 0 0 0;
 }
 
 .current_page, .page_select {
+	display: inline-block;
     margin-right: 8px;
     text-decoration: none;
 }
@@ -160,6 +161,7 @@ ul#results li.record p {
 
 }
 .page_select {
+	
 }
 
 /*---faq-----*/

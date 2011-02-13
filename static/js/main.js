@@ -28,9 +28,11 @@ function validateDates() {
 	var eDate = $("#end_date").val();
 	
 	//validate correct date syntax
-	var datePattern = /\d{1,2}\/\d{1,2}\/\d{4}/;
+	var datePattern = /^\d{2}\/\d{2}\/\d{4}$/;
 	if(bDate.match(datePattern) != null && eDate.match(datePattern) != null) {
 		return true;
+	} else {
+		return false;
 	}
 }
 
@@ -58,7 +60,7 @@ function updatePagination(data) {
         }
     }
     
-    $('#pagination').html(html);
+    $('.pagination').html(html);
 }
 
 //generates html for inner accordion content
@@ -149,11 +151,11 @@ function doSubmit(options) {
 		data: merged,
         beforeSend: function() {
             if(!validateDates()) {
+				alert('Please enter a date in the follwing format: MM-DD-YYYY');
 				return false;
 			}
         },
         error: function() {
-            
         },
 		success: function(data) {
 		    //clear table
