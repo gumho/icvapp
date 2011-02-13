@@ -10,6 +10,7 @@ Features
 -Updated all test files with relevant comments/info
 -Updated FAQ content to latest versions
 -Updated the Help page with Quick start guide
+-Added migration dump helper
 
 Fixes
 -Fixed broken validation of dates! (identified during last execution test)
