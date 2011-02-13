@@ -1,5 +1,8 @@
 from rprocessor import *
 
+# This test module tests correctness as well as scale of 
+# the custom howManyPages() and paginate() functions
+
 #ASSUME MAX RECORDS IS 10
 
 def below_threshold_number_pages_test():

@@ -2,26 +2,30 @@ from paste.fixture import TestApp
 from nose.tools import *
 from icvapp import app
 
-NUM_RESULTS = '"numresults":"717"'
-
+# Verify whether a test for 'failed' records results in only 'failed' tests
 def failed_search_test():
 	middleware = []
 	testApp = TestApp(app.wsgifunc(*middleware))
 	r = testApp.get('/search', params={'begin_date': '1000-01-01', 'end_date': '3000-01-01', 'status': 'failed'})
 	assert(str(r).find('passed') == -1)
 
+# Verify whether a test for 'passed' records results in only 'passed' tests
 def passed_search_test():
 	middleware = []
 	testApp = TestApp(app.wsgifunc(*middleware))
 	r = testApp.get('/search', params={'begin_date': '1000-01-01', 'end_date': '3000-01-01', 'status': 'passed'})
 	assert(str(r).find('failed') == -1)
 
+# Verify whether the system returns all records from a search. No results should
+# be left out.
 def correct_number_studies_search_test():
+	NUM_RESULTS = '"numresults":"717"'
 	middleware = []
 	testApp = TestApp(app.wsgifunc(*middleware))
 	r = testApp.get('/search', params={'begin_date': '1000-01-01', 'end_date': '3000-01-01', 'status': 'passed'})
 	r.mustcontain(NUM_RESULTS)
 
+# Verify whether detailed information and fields from a search are correct
 def correct_information_search_test():
 	middleware = []
 	testApp = TestApp(app.wsgifunc(*middleware))
