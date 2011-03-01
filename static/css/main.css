@@ -37,14 +37,11 @@ h5 {
     padding: 0px;
 }
 	#logo a {
-		text-indent: -9999px;
-		display: block;
-		width: 150px;
-		height: 58px;
-		background: transparent url(../images/logo.png) no-repeat left top;
+		text-decoration: none;
+		font-size: 22px;
 	}
 	#logo a:hover {
-		background: transparent url(../images/logo-hover.png) no-repeat left top;
+		text-decoration: underline;
 	}
 
 #instructions {
