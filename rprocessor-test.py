@@ -22,7 +22,7 @@ def greater_threshold_number_pages_test():
 	assert(howManyPages(records) == 2)
 
 def big_threshold_number_pages_test():
-	records = [x for x in range(10000)] #1000 records
+	records = [x for x in range(10000)] #10000 records
 	assert(howManyPages(records) == 1000)
 
 def first_page_paginate_test():
