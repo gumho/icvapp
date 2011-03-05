@@ -8,6 +8,7 @@ Features
 
 Fixes
 -Removed old references to 'ICVApp'
+-Fixed comment typo in 'rprocessor-test.py#big_threshold_number_pages_test' (addresses feedback in Stim Pack 2)
 
 1/20/11 - 2/12/11
 Features
